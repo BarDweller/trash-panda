@@ -3,11 +3,12 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
+  <!-- note these values are ovewritten by jitpack, and are placeholders -->
   <groupId>org.ozzy.trashpanda</groupId>
   <artifactId>stiletto</artifactId>
   <version>0.0.1</version>
+  
   <packaging>pom</packaging>
-
   <name>Trashpanda stiletto parent stack</name>
   <description>Parent POM file for a Spring Boot Application</description>
 
@@ -31,12 +32,12 @@
   <parent>
     <groupId>org.springframework.boot</groupId>
     <artifactId>spring-boot-dependencies</artifactId>
-    <version>2.1.13.RELEASE</version>
+    <version>2.1.14.RELEASE</version>
   </parent>
 
   <properties>
     <!-- Required library versions -->
-    <spring-boot.version>2.1.13.RELEASE</spring-boot.version>
+    <spring-boot.version>2.1.14.RELEASE</spring-boot.version>
     <opentracing-spring-jaeger-web-starter.version>2.0.0</opentracing-spring-jaeger-web-starter.version>
 
     <java.version>1.8</java.version>
