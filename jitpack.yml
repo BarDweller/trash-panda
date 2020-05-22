@@ -1,0 +1,5 @@
+jdk:
+ - openjdk8
+install:
+ - echo Installing parent pom
+ - mvn install -f stiletto/parentpom.xml
