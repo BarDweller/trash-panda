@@ -12,12 +12,12 @@
 
   <parent>
       <groupId>com.github.BarDweller.Trash-Panda</groupId>
-      <artifactId>stiletto</artifactId>
+      <artifactId>galanthus</artifactId>
       <version>master-SNAPSHOT</version>
   </parent>
 
   <groupId>org.ozzy</groupId>
-  <artifactId>stiletto-managed-application</artifactId>
+  <artifactId>galanthus-managed-application</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <packaging>jar</packaging>
 
