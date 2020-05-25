@@ -96,7 +96,6 @@
         </plugin>
         <plugin>
           <artifactId>maven-enforcer-plugin</artifactId>
-          <version>${maven-enforcer-plugin.version}</version>
           <executions>
             <execution>
               <id>enforce-banned-dependencies</id>
@@ -121,7 +120,6 @@
         </plugin>
         <plugin>
           <artifactId>maven-clean-plugin</artifactId>
-          <version>${maven-clean-plugin.version}</version>
           <configuration>
             <excludeDefaultDirectories>true</excludeDefaultDirectories>
             <filesets>

@@ -1,5 +1,8 @@
 jdk:
  - openjdk8
 install:
- - echo Installing parent pom
+ - echo Installing stiletto parent pom
  - mvn install -f stiletto/parentpom.xml
+ - echo Installing galanthus parent pom
+ - mvn install -f galanthus/parentpom.xml
+ - echo done
