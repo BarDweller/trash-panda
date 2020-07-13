@@ -6,17 +6,17 @@ projects:
   - name: default
     source:
       type: git
-      location: 'https://github.com/bardweller/trash-panda.git'
+      location: 'https://github.com/BarDweller/trash-panda.git'
       sparseCheckoutDir: /unmanaged-app
   - name: galanthus-app
     source:
       type: git
-      location: 'https://github.com/bardweller/trash-panda.git'
+      location: 'https://github.com/BarDweller/trash-panda.git'
       sparseCheckoutDir: /galanthus-managed-app
   - name: stiletto-app
     source:
       type: git
-      location: 'https://github.com/bardweller/trash-panda.git'
+      location: 'https://github.com/BarDweller/trash-panda.git'
       sparseCheckoutDir: /stiletto-managed-app
 components:
   - type: chePlugin
