@@ -45,7 +45,6 @@ commands:
       id: devBuild
       component: devcontainer
       commandLine: "mvn compile"
-      workingDir: /projects/springbootproject
       group:
         kind: build 
         isDefault: true
@@ -53,7 +52,6 @@ commands:
       id: devRun
       component: devcontainer
       commandLine: "mvn spring-boot:run -Dmaven.test.skip=true"
-      workingDir: /projects/springbootproject
       attributes:
         restart: "false"      
       group:
