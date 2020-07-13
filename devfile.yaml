@@ -21,25 +21,25 @@ projects:
       branch: master
 components:
   - container:
-    name: devcontainer
-    image: registry.access.redhat.com/ubi8/openjdk-8
-    memoryLimit: 768Mi
-    endpoints:
-      - name: 8080/tcp
-        configuration:
-          discoverable: false
-          public: true
-          protocol: tcp
-          scheme: http
-        targetPort: 8080
-      - name: 8443/tcp
-        configuration:
-          discoverable: false
-          public: true
-          protocol: tcp
-          scheme: https
-        targetPort: 8443
-    mountSources: true      
+      name: devcontainer
+      image: registry.access.redhat.com/ubi8/openjdk-8
+      memoryLimit: 768Mi
+      mountSources: true      
+      endpoints:
+        - name: 8080/tcp
+          configuration:
+            discoverable: false
+            public: true
+            protocol: tcp
+            scheme: http
+          targetPort: 8080
+        - name: 8443/tcp
+          configuration:
+            discoverable: false
+            public: true
+            protocol: tcp
+            scheme: https
+          targetPort: 8443
 commands:
   - exec:
       id: devBuild
