@@ -24,7 +24,8 @@ components:
       name: devcontainer
       image: registry.access.redhat.com/ubi8/openjdk-8
       memoryLimit: 768Mi
-      mountSources: true      
+      mountSources: true
+      sourceMapping: /projects
       endpoints:
         - name: 8080/tcp
           configuration:
@@ -44,6 +45,7 @@ commands:
   - exec:
       id: devBuild
       component: devcontainer
+      workingDir: /projects
       commandLine: "mvn compile"
       group:
         kind: build 
@@ -51,6 +53,7 @@ commands:
   - exec:
       id: devRun
       component: devcontainer
+      workingDir: /projects
       commandLine: "mvn spring-boot:run -Dmaven.test.skip=true"
       attributes:
         restart: "false"      
