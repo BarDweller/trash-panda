@@ -1,47 +1,61 @@
----
-apiVersion: 1.0.0
+schemaVersion: 2.0.0
 metadata:
   generateName: java-spring-boot
+  version: 0.0.1
+  description: Basic Java Spring Boot Stack
 projects:
   - name: default
-    source:
-      type: git
+    git:
       location: 'https://github.com/BarDweller/trash-panda.git'
       sparseCheckoutDir: /unmanaged-app
+      branch: master
   - name: galanthus-app
-    source:
-      type: git
+    git:
       location: 'https://github.com/BarDweller/trash-panda.git'
       sparseCheckoutDir: /galanthus-managed-app
+      branch: master
   - name: stiletto-app
-    source:
-      type: git
+    git:
       location: 'https://github.com/BarDweller/trash-panda.git'
       sparseCheckoutDir: /stiletto-managed-app
+      branch: master
 components:
-  - type: chePlugin
-    id: redhat/java/latest
-    memoryLimit: 1512Mi
-  - type: dockerimage
+  - container:
+    name: devcontainer
     image: registry.access.redhat.com/ubi8/openjdk-8
-    alias: devcontainer
     memoryLimit: 768Mi
     endpoints:
-      - name: '8080/http'
-        port: 8080
-      - name: '8080/https'
-        port: 8443
-      - name: '5005/tcp'
-        port: 5005
+      - name: 8080/tcp
+        configuration:
+          discoverable: false
+          public: true
+          protocol: tcp
+          scheme: http
+        targetPort: 8080
+      - name: 8443/tcp
+        configuration:
+          discoverable: false
+          public: true
+          protocol: tcp
+          scheme: https
+        targetPort: 8443
     mountSources: true      
 commands:
-  -
-    name: devRun
-    actions:
-      -
-        type: exec
-        component: devcontainer
-        command: > 
-          echo Running build... &&
-          mvn -f ./pom.xml package spring-boot:run -Dmaven.test.skip=true
-        workdir: /projects/springbootproject
+  - exec:
+      id: devBuild
+      component: devcontainer
+      commandLine: "mvn compile"
+      workingDir: /projects/springbootproject
+      group:
+        kind: build 
+        isDefault: true
+  - exec:
+      id: devRun
+      component: devcontainer
+      commandLine: "mvn spring-boot:run -Dmaven.test.skip=true"
+      workingDir: /projects/springbootproject
+      attributes:
+        restart: "false"      
+      group:
+        kind: run 
+        isDefault: true        
