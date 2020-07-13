@@ -3,31 +3,26 @@ apiVersion: 1.0.0
 metadata:
   generateName: java-spring-boot
 projects:
-  -
-    name: default
+  - name: default
     source:
       type: git
-      location: "https://github.com/bardweller/trash-panda.git"
-      sparseCheckoutDir: /unmanaged-app/
-  -
-    name: galanthus-app
+      location: 'https://github.com/bardweller/trash-panda.git'
+      sparseCheckoutDir: /unmanaged-app
+  - name: galanthus-app
     source:
       type: git
-      location: "https://github.com/bardweller/trash-panda.git"
+      location: 'https://github.com/bardweller/trash-panda.git'
       sparseCheckoutDir: /galanthus-managed-app
-  -
-    name: stiletto-app
+  - name: stiletto-app
     source:
       type: git
-      location: "https://github.com/bardweller/trash-panda.git"
+      location: 'https://github.com/bardweller/trash-panda.git'
       sparseCheckoutDir: /stiletto-managed-app
 components:
-  -
-    type: chePlugin
+  - type: chePlugin
     id: redhat/java/latest
     memoryLimit: 1512Mi
-  -
-    type: dockerimage
+  - type: dockerimage
     image: registry.access.redhat.com/ubi8/openjdk-8
     alias: devcontainer
     memoryLimit: 768Mi
