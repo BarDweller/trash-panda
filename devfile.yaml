@@ -35,5 +35,5 @@ commands:
         component: devcontainer
         command: > 
           echo Running build... &&
-          mvn -Dmaven.repo.local=/data/cache/.m2/repository -f ./pom.xml package spring-boot:run -Dmaven.test.skip=true
+          mvn -f ./pom.xml package spring-boot:run -Dmaven.test.skip=true
         workdir: /projects/springbootproject
