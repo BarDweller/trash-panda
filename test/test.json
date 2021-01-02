@@ -1,0 +1,49 @@
+{
+    "packages": [
+      {
+        "name": "AZ3166oz",
+        "maintainer": "No-one That Cares, Apparently.",
+        "websiteURL": "https://microsoft.github.io/azure-iot-developer-kit/",
+        "email": "none@dontbotherme.com",
+        "platforms": [
+        {
+            "name":  "MXChip - Alternate Binaries",
+            "architecture":  "stm32f4",
+            "version":  "2.0.0",
+            "category":  "Contributed",
+            "url":  "https://github.com/microsoft/devkit-sdk/releases/download/2.0.0/AZ3166-2.0.0.zip",
+            "archiveFileName":  "AZ3166-2.0.0.zip",
+            "checksum":  "MD5:4f51c0ebf4d510f28c06d203a4ce23f8",
+            "size":  "6348700",
+            "boards":  [
+                           {
+                               "name":  "MXChip - Microsoft Azure IoT Developer Kit AZ3166 - AlternateURLS"
+                           }
+                       ],
+            "toolsDependencies":  [
+                                      {
+                                          "packager":  "AZ3166oz",
+                                          "name":  "arm-none-eabi-gcc-launchpad",
+                                          "version":  "5_4-2016q3"
+                                      }
+                                  ]
+        }      
+        ],
+        "tools": [
+          {
+            "name": "arm-none-eabi-gcc-launchpad",
+            "version": "5_4-2016q3",
+            "systems": [
+              {
+                "host": "i686-mingw32",
+                "archiveFileName": "gcc-arm-none-eabi-5_4-2016q3-20160926-win32.zip",
+                "url": "https://launchpad.net/gcc-arm-embedded/5.0/5-2016-q3-update/+download/gcc-arm-none-eabi-5_4-2016q3-20160926-win32.zip",
+                "checksum": "MD5:dd46badbea382c884dd7079dcc5b4e0d",
+                "size": "123456717"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
